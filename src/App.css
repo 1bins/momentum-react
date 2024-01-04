@@ -1,38 +1,268 @@
-.App {
-  text-align: center;
+@charset "utf-8";
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@font-face {
+    font-family: 'KOTRA_SONGEULSSI';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_SONGEULSSI.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ========================================== RESET */
+body {overflow: hidden; font-family: 'Pretendard', sans-serif; line-height: 1; color: #191919;}
+* {margin: 0; padding: 0; box-sizing: border-box;}
+ul,ol {list-style: none;}
+hr {display: none;}
+h1 {margin: 0;}
+a {text-decoration: none;}
+b {font-weight: 700;}
+button {border: none; background: none; cursor: pointer;}
+img {border: none; -webkit-user-drag: none;}
+html {font-size: 0.625em;}
+.clear:after {content: ""; clear: both; display: block;}
+.blind {position: absolute; top: -9999px; left: -9999px;}
+input, textarea, select, button {
+    font-family: 'Pretendard', sans-serif;
+    appearance: none;
+    -webkit-appearance: none;
+}
+body::-webkit-scrollbar {width: 10px;}
+body::-webkit-scrollbar-track-piece {background-color: #fff;}
+body::-webkit-scrollbar-thumb {
+    background-color: #d5d5d5;
+    border-radius: 6px;
+}
+body::-webkit-scrollbar-thumb:hover {background-color: #c6c6c6;}
+main {
+    width: 100vw; height: 100vh;
+    min-width: 1200px; min-height: 700px;
+    overflow: hidden;
+}
+.hide {visibility: hidden;}
+.hidden {transform: scale(0);}
+
+/* =========================
+  로그인 폼
+========================== */
+#login-form {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,.3);
+    z-index: 5;
+    overflow: hidden;
+}
+#login-form .form-inner {
+    position: absolute;
+    top: 47%; left: 50%; transform: translate(-50%,-50%);
+    width: 275px;
+}
+#login-form .img-box {
+    display: block;
+    position: relative;
+    width: 180px; height: 180px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 100%;
+}
+#login-form .img-box img {
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+}
+#login-form .text {
+    margin: 38px 0 22px;
+    font-size: 3rem; color: #fff;
+    letter-spacing: -0.05rem;
+    text-align: center;
+}
+#login-form #login-txt {
+    padding-left: 20px;
+    width: 100%; height: 48px;
+    font-size: 1.5rem;
+    border-radius: 24px;
+    border: none;
+    outline: none;
+}
+#login-form #login-txt::placeholder {color: #6b6767;}
+#login-form .form-box {position: relative;}
+/* =========== 업데이트 === */
+#main.accept #login-form {
+    opacity: 0;
+    visibility: hidden;
+    transition: .7s;
+}
+#main.accept #login-form #login-txt {display: none;}
+
+/* =========================
+  메인
+========================== */
+#login-accept {
+    position: relative;
+    z-index: 3;
+}
+.main-inner {
+    position: relative;
+    display: flex;
+    width: 86.45%; height: 100vh;
+    padding: 87px 0 0;
+    margin: 0 auto;
+}
+.main-inner .popup {
+    width: 384px; height: 548px;
+    background: rgba(255, 255, 255, .9);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20.3826px 0.6174000000000001px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    transition: .4s;
+}
+.main-inner .popup .header-area {
+    position: relative;
+    margin-bottom: 26px;
+    height: 36px;
+    background: rgba(0, 0, 0, .06);
+}
+.main-inner .popup .header-area button {
+    position: absolute;
+    top: 6px; right: 10px;
+    width: 25px; height: 25px;
+    border-radius: 5px;
+    background: rgba(0255, 255, 255, .7);
+}
+.main-inner .popup .popup-cont-area {padding: 0 20px;}
+.main-inner .popup {visibility: hidden;}
+#main.accept .main-inner .popup {visibility: visible;}
+/* =========================
+  TO DO
+========================== */
+#todo-list .greet {font-size: 2.2rem;}
+#todo-list .greet span {font-weight: 700;}
+#todo-list #todo-form {margin: 18px 0 23px;}
+#todo-list #todo-form input {
+    width: 100%; height: 46px;
+    padding-left: 15px;
+    font-size: 1.5rem; color: #333;
+    background: #eee;
+    border-radius: 9px;
+    border: none;
+}
+#todo-list #todo-form input::placeholder {color: #676767;}
+#todo-list #todo-ul {height: 345px; overflow-y: auto;}
+#todo-list #todo-ul li:nth-child(n+2) {margin-top: 20px;}
+#todo-list #todo-ul li {
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+}
+#todo-list #todo-ul label {
+    width: 16px; height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#todo-list #todo-ul input:checked + label {
+    border: none;
+    background: #ffb400;
+}
+#todo-list #todo-ul input:checked + label + p {text-decoration: line-through;}
+#todo-list #todo-ul p {font-size: 1.5rem;}
+#todo-list #todo-ul button {font-size: 1.6rem;}
+
+/* =========================
+  Weather
+========================== */
+#weather {
+    width: 310px; height: 160px;
+    margin-left: 41px;
+}
+#weather .header-area {margin-bottom: 7px;}
+#weather .popup-cont-area {
+    display: flex;
+    align-items: center;
+} 
+#weather .popup-cont-area img {height: 104px;}
+#weather .weather-cont-box {
+    width: calc(100% - 172px);
+    margin-left: 42px;
+    font-size: 1.5rem;
+    text-align: right;
+}
+#weather .weather-cont-box span {display: block;}
+#weather .weather-cont-box span:first-child {font-weight: 700;}
+#weather .weather-cont-box span:nth-child(2) {margin: 15px 0;}
+
+/* =========================
+  Quote
+========================== */
+#quote {
+    position: absolute;
+    bottom: 100px; right: -94px;
+    width: 624px; height: 164px;
+    background: rgba(255,180,0,.9);
+}
+#quote .popup-cont-area p {font-family: 'KOTRA_SONGEULSSI';}
+#quote #quote-txt {
+    font-size: 2rem;
+    line-height: 1.4;
+    word-break: keep-all;
+}
+#quote #quote-author {
+    position: absolute;
+    font-size: 1.8rem;
+    text-align: right;
+    right: 20px; bottom: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* =========================
+  TASK BAR
+========================== */
+#main.accept #task-bar {
+    transform: translateY(0);
+    transition: transform .7s .3s;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#task-bar {
+    position: fixed;
+    width: 100vw; height: 62px;
+    bottom: 0; left: 0;
+    z-index: 3;
+    background: rgba(244,245,250, .84);
+    transform: translateY(100%);
 }
-
-.App-link {
-  color: #61dafb;
+#task-bar .icons-list {
+    display: flex;
+    height: 62px;
+    justify-content: center;
+    align-items: center;
 }
+#task-bar .icons-list li:nth-child(n+2) {margin-left: 28px;}
+#task-bar .icons-list li:last-child {margin-left: 110px;}
+#task-bar .icons-list li button:hover {
+    transform: translateY(-30%);
+    transition: transform .3s;
+}
+#task-bar #clock {
+    position: absolute;
+    top: 50%; right: 24px; transform: translateY(-50%);
+    font-size: 1.4rem;
+    text-align: right;
+}
+#task-bar #clock #time {margin-bottom: 7px;}
+#task-bar button {filter: grayscale(1);}
+#task-bar button.fill {filter: grayscale(0);}
+#task-bar button#logout {filter: grayscale(0);}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* =========================
+  배경화면
+========================== */
+#bg-area {
+    position: absolute;
+    top: 0; left: 0;
+}
+#bg-area img {
+    width: 100vw; height: 100vh;
+    object-fit: cover;
+}
+/* =========== 업데이트 === */
+#main.accept #bg-area img {
+    transform: scale(1.03);
+    transition: transform .8s;
 }
