@@ -42,4 +42,4 @@
 
 ### 로그아웃 기능을 통해 데이터를 초기화 시킬 수 있어요
 <img width="80%" src="https://private-user-images.githubusercontent.com/144764686/295451501-cd0c6dc2-1ada-45fa-abea-9fbc39a6bc70.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQ4NjI0NjksIm5iZiI6MTcwNDg2MjE2OSwicGF0aCI6Ii8xNDQ3NjQ2ODYvMjk1NDUxNTAxLWNkMGM2ZGMyLTFhZGEtNDVmYS1hYmVhLTlmYmMzOWE2YmM3MC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDExMFQwNDQ5MjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mNTljNDA2NmNjOTBlMDhmZGFlZTM5MzgzZmY3NzZlZDBjYTc2YWJkODAwMjIzNDU2Zjc0MDJjMzU1MjEyZjE5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.yohuEaQdmMSfSiPNWkOsOXwC0hMZ8PVVtzt3K-9hzPM">
-<blockquote>해당 기능은 로컬저장소의 데이터를 전부 초기화 시키기 때문에 페이지를 새로고침하거나 다시 방문할 경우 로그인 화면부터 다시 시작하게 됩니다.</blockquote>
+<blockquote>해당 기능은 로컬저장소의 데이터를 전부 초기화 시키기 때문에<br> 페이지를 새로고침하거나 다시 방문할 경우 로그인 화면부터 다시 시작하게 됩니다.</blockquote>
